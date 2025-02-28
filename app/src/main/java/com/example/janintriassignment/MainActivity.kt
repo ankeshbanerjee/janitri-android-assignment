@@ -52,7 +52,7 @@ class MainActivity : FragmentActivity() {
 
     private fun scheduleNotificationWork() {
         Log.d("ScheduledNotification", "Scheduled")
-        val workRequest = PeriodicWorkRequestBuilder<NotificationWorker>(15, TimeUnit.MINUTES)
+        val workRequest = PeriodicWorkRequestBuilder<NotificationWorker>(5, TimeUnit.HOURS)
             .build()
         WorkManager.getInstance(application).enqueueUniquePeriodicWork(
             "notification_work",
